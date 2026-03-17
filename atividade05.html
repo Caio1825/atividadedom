@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h2>Tabuada</h2>
+
+
+<input type="number" id="numero">
+<button onclick="gerar()">Gerar</button>
+
+
+<ul id="tabuada"></ul>
+
+
+<script>
+function gerar() {
+    let num = Number(numero.value);
+    let lista = document.getElementById("tabuada");
+
+
+    lista.innerHTML = "";
+
+
+    for (let i = 1; i <= 10; i++) {
+        let item = document.createElement("li");
+        item.innerText = num + " x " + i + " = " + (num * i);
+        lista.appendChild(item);
+    }
+}
+</script>
+</body>
+</html>
 
