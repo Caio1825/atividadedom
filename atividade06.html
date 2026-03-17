@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .concluida {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+
+<h2>Missões do Jogo</h2>
+
+
+<input type="text" id="missaoInput" placeholder="Digite a missão">
+<button onclick="adicionarMissao()">Adicionar</button>
+
+
+<ul id="listaMissoes"></ul>
+
+
+<script>
+function adicionarMissao() {
+  let input = document.getElementById("missaoInput");
+  let texto = input.value;
+
+
+  if (texto === "") return;
+
+
+  let li = document.createElement("li");
+  li.textContent = texto;
+
+
+  li.onclick = function() {
+    li.classList.toggle("concluida");
+  };
+
+
+  document.getElementById("listaMissoes").appendChild(li);
+
+
+  input.value = "";
+}
+</script>
+
+
+</body>
+</html>
