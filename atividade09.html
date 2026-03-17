@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>Adivinhe o número (1 a 20)</h2>
+
+
+<input type="number" id="palpite">
+<button onclick="tentar()">Tentar</button>
+
+
+<p id="resultado"></p>
+<p id="tentativas"></p>
+
+
+<script>
+let numero = Math.floor(Math.random() * 20) + 1;
+let tentativas = 0;
+
+
+function tentar() {
+  let palpite = Number(document.getElementById("palpite").value);
+  tentativas++;
+
+
+  if (palpite > numero) {
+    document.getElementById("resultado").textContent = "Muito alto!";
+  } else if (palpite < numero) {
+    document.getElementById("resultado").textContent = "Muito baixo!";
+  } else {
+    document.getElementById("resultado").textContent = "Acertou!";
+    reiniciar();
+  }
+
+
+  document.getElementById("tentativas").textContent = "Tentativas: " + tentativas;
+}
+
+
+function reiniciar() {
+  numero = Math.floor(Math.random() * 20) + 1;
+  tentativas = 0;
+}
+</script>
+
+
+</body>
+</html>
+
